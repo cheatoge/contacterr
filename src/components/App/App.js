@@ -30,6 +30,44 @@ class App extends React.Component {
               isBusiness: true
             }
           ]
+        },
+        {
+          id: 1,
+          name: 'Sandra May',
+          phones: [
+            {
+              number: '323602410'
+            },
+            {
+              number: '323602410'
+            }
+          ]
+        },
+        {
+          id: 2,
+          name: 'Paul Walker',
+          phones: [
+            {
+              number: '434345333',
+              isBusiness: true
+            },
+            {
+              number: '868444333',
+              isBusiness: true
+            }
+          ]
+        },
+        {
+          id: 2,
+          name: 'Harry Potter',
+          phones: [
+            {
+              number: '333444555'
+            },
+            {
+              number: '666778889'
+            }
+          ]
         }
       ]
     }
