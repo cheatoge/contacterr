@@ -62,4 +62,4 @@ const contacts = [
   }
 ]
 
-export { contacts }
+export default contacts

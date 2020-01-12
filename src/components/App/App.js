@@ -1,22 +1,20 @@
 import React from 'react'
 import './App.css'
 import { ContactList } from '../ContactList'
-import { contacts } from '../../util/TestData'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducers from '../../reducers'
+
+const store = createStore(reducers)
 
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      contacts: contacts
-    }
-  }
-
   render() {
     return (
-      <div className="App">
-        <ContactList contacts={this.state.contacts} />
-      </div>
+      <Provider store={store}>
+        <div className="App">
+          <ContactList />
+        </div>
+      </Provider>
     )
   }
 }
