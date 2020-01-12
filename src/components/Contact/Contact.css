@@ -23,3 +23,9 @@
 .phone-business {
   color: #1c6ae8;
 }
+
+@media (min-width: 520px) {
+  .contact {
+    min-width: 240px;
+  }
+}
