@@ -14,7 +14,11 @@ class Contact extends React.Component {
         style += ' phone-business'
       }
 
-      return <li className={style}>{formatPhone(number)}</li>
+      return (
+        <li key={name + number} className={style}>
+          {formatPhone(number)}
+        </li>
+      )
     })
 
     return (
