@@ -1,0 +1,25 @@
+.contact {
+  border: 2px solid #fab650;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 5px;
+}
+
+.contact-header {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.phones-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.phones {
+  margin: 0;
+}
+
+.phone-business {
+  color: #1c6ae8;
+}
