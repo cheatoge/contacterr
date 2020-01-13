@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { ContactList } from '../ContactList'
+import { ContactListContainer } from '../../containers/ContactListContainer'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from '../../reducers'
@@ -12,7 +12,7 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <ContactList />
+          <ContactListContainer />
         </div>
       </Provider>
     )
