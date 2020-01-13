@@ -24,6 +24,12 @@
   color: #1c6ae8;
 }
 
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 @media (min-width: 520px) {
   .contact {
     min-width: 240px;
