@@ -214,14 +214,13 @@ class Contact extends React.Component {
         />
 
         <div className="contact-actions">
-          <button onClick={() => removeContact(id)}>Remove</button>
-          {isEditing && (
-            <button onClick={() => this.finishEditing()}>Cancel</button>
-          )}
-          {isEditing && (
-            <button onClick={() => this.saveEdits(id)}>Save</button>
-          )}
-          {!isEditing && (
+          {isEditing ? (
+            <>
+              <button onClick={() => removeContact(id)}>Remove</button>
+              <button onClick={() => this.finishEditing()}>Cancel</button>
+              <button onClick={() => this.saveEdits(id)}>Save</button>
+            </>
+          ) : (
             <button onClick={() => this.editContact(contact)}>Edit</button>
           )}
         </div>
