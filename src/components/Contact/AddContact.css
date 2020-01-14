@@ -9,3 +9,9 @@
   width: 100px;
   height: 30px;
 }
+
+.validation-error {
+  color: red;
+  font-size: 0.8em;
+  margin-bottom: 3px;
+}

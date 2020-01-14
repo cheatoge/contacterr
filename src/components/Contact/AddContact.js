@@ -11,7 +11,8 @@ import './Contact.css'
 const initialState = () => {
   return {
     isEditing: false,
-    contact: undefined
+    contact: undefined,
+    fieldErrors: {}
   }
 }
 
@@ -33,11 +34,24 @@ class AddContact extends React.Component {
     this.state = initialState()
   }
 
-  cancel = () => {
+  finishEditing = () => {
     this.setState(initialState())
   }
 
-  createNewContact = () => {}
+  saveNewContact = () => {
+    const { contact } = this.state
+    if (!contact.name) {
+      this.setState({
+        fieldErrors: {
+          name: 'Field cannot be empty.'
+        }
+      })
+
+      return
+    }
+
+    this.finishEditing()
+  }
 
   editNewContact = () => {
     this.setState({
@@ -95,7 +109,7 @@ class AddContact extends React.Component {
   }
 
   render() {
-    const { isEditing, contact } = this.state
+    const { isEditing, contact, fieldErrors } = this.state
 
     return (
       <div className="contact">
@@ -111,6 +125,9 @@ class AddContact extends React.Component {
             <div>
               <label>Name:</label>{' '}
               <input value={contact.name} onChange={this.onNameChange}></input>
+              {fieldErrors.name && (
+                <div className="validation-error">* {fieldErrors.name}</div>
+              )}
             </div>
 
             <PhonesList
@@ -122,8 +139,8 @@ class AddContact extends React.Component {
 
             <div className="filler"></div>
             <div className="contact-actions">
-              <button onClick={() => this.cancel()}>Cancel</button>
-              <button onClick={() => this.createNewContact()}>Create</button>
+              <button onClick={() => this.finishEditing()}>Cancel</button>
+              <button onClick={() => this.saveNewContact()}>Create</button>
             </div>
           </>
         )}
