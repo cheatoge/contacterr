@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Contact } from '../Contact'
-import { AddContact } from '../AddContact'
+import { AddContact } from '../Contact'
 import './ContactList.css'
 
 class ContactList extends React.Component {

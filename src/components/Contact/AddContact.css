@@ -1,0 +1,11 @@
+.center-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-button {
+  width: 100px;
+  height: 30px;
+}
