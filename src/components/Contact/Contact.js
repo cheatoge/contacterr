@@ -25,7 +25,7 @@ class Phone extends React.Component {
       number: '',
       isBusiness: false
     }
-    const { isEditing, key, phone, index, updatePhone } = this.props
+    const { isEditing, phone, index, updatePhone } = this.props
     const { number, isBusiness } = phone || defaultValue
 
     return (
@@ -188,7 +188,7 @@ class Contact extends React.Component {
 
   render() {
     const { isEditing, editedContact } = this.state
-    let { removeContact, updateContact, contact } = this.props
+    let { removeContact, contact } = this.props
 
     if (editedContact) {
       contact = editedContact

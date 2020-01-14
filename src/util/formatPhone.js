@@ -1,5 +1,5 @@
 const formatPhone = number => {
-  if (typeof number != 'string') {
+  if (typeof number !== 'string') {
     return ''
   }
 
@@ -8,7 +8,7 @@ const formatPhone = number => {
     return ''
   }
 
-  if (digits.length != 9) {
+  if (digits.length !== 9) {
     return digits
   }
 
