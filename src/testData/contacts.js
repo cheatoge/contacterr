@@ -14,7 +14,8 @@ const contacts = [
     name: 'Mike Tyson',
     phones: [
       {
-        number: '333343444'
+        number: '333343444',
+        isBusiness: false
       },
       {
         number: '636263634',
@@ -27,10 +28,12 @@ const contacts = [
     name: 'Sandra May',
     phones: [
       {
-        number: '323602410'
+        number: '323602410',
+        isBusiness: false
       },
       {
-        number: '545433322'
+        number: '545433322',
+        isBusiness: false
       }
     ]
   },
@@ -53,10 +56,12 @@ const contacts = [
     name: 'Harry Potter',
     phones: [
       {
-        number: '333444555'
+        number: '333444555',
+        isBusiness: true
       },
       {
-        number: '666778889'
+        number: '666778889',
+        isBusiness: true
       }
     ]
   }
