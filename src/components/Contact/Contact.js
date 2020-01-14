@@ -102,13 +102,14 @@ class Contact extends React.Component {
 
     return (
       <div className={'contact'}>
-        <div className={'contact-header'}>
-          {isEditing ? (
+        {isEditing ? (
+          <div>
+            <label>Name:</label>{' '}
             <input value={name} onChange={this.onNameChange}></input>
-          ) : (
-            name
-          )}
-        </div>
+          </div>
+        ) : (
+          <div className={'contact-header'}>{name}</div>
+        )}
 
         <PhonesList
           updatePhone={this.updatePhone}
