@@ -21,15 +21,21 @@ class PhonesList extends React.Component {
 
     return (
       <section className={'phones-container'}>
-        <span>Phones:</span>
-        <ul className={'phones'}>
-          {wrappedPhones}
-          {isEditing && (
-            <li>
-              <button onClick={addPhone}>addPhone</button>
-            </li>
-          )}
-        </ul>
+        {isEditing || phones.length > 0 ? (
+          <>
+            <span>Phones:</span>
+            <ul className={'phones'}>
+              {wrappedPhones}
+              {isEditing && (
+                <li>
+                  <button onClick={addPhone}>addPhone</button>
+                </li>
+              )}
+            </ul>
+          </>
+        ) : (
+          <span>No phones defined</span>
+        )}
       </section>
     )
   }
