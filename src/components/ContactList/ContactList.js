@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Contact } from '../Contact'
+import { AddContact } from '../AddContact'
 import './ContactList.css'
 
 class ContactList extends React.Component {
@@ -16,6 +17,8 @@ class ContactList extends React.Component {
         />
       )
     })
+
+    contacts = [<AddContact key={-1} />, ...contacts]
 
     return <div className={'contact-list'}>{contacts}</div>
   }
