@@ -3,6 +3,9 @@
   padding: 10px;
   box-sizing: border-box;
   margin: 5px;
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
 }
 
 .contact-header {
@@ -32,6 +35,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+
+.filler {
+  flex-grow: 1;
 }
 
 @media (min-width: 520px) {

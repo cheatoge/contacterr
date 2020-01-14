@@ -213,6 +213,7 @@ class Contact extends React.Component {
           isEditing={isEditing}
         />
 
+        <div className="filler"></div>
         <div className="contact-actions">
           {isEditing ? (
             <>
