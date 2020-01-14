@@ -14,23 +14,6 @@
   margin-bottom: 10px;
 }
 
-.phones-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.phones {
-  margin: 0 0 10px 0;
-}
-
-.phone-business {
-  color: #1c6ae8;
-}
-
-.phone-editing {
-  margin-bottom: 10px;
-}
-
 .contact-actions {
   display: flex;
   flex-wrap: wrap;

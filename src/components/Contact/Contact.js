@@ -1,103 +1,6 @@
 import React from 'react'
+import { PhonesList } from '../PhonesList'
 import './Contact.css'
-import formatPhone from '../../util/formatPhone'
-
-class Phone extends React.Component {
-  onChange = event => {
-    const { updatePhone, index, phone } = this.props
-    let newValue
-    if (event.target.type === 'checkbox') {
-      newValue = !phone[event.target.name]
-    } else {
-      newValue = event.target.value || ''
-      const digits = newValue.match(/\d/g)
-      newValue = digits ? digits.join('') : ''
-    }
-
-    updatePhone(index, {
-      ...phone,
-      [event.target.name]: newValue
-    })
-  }
-
-  render() {
-    const defaultValue = {
-      number: '',
-      isBusiness: false
-    }
-    const { isEditing, phone, index, updatePhone } = this.props
-    const { number, isBusiness } = phone || defaultValue
-
-    return (
-      <>
-        {isEditing ? (
-          <div className="phone-editing">
-            <div>
-              <input
-                pattern="[0-9]*"
-                name="number"
-                value={number}
-                onChange={this.onChange}
-              ></input>
-              <button onClick={() => updatePhone(index)}>x</button>
-            </div>
-            <div>
-              <label>Business</label>
-              <input
-                name="isBusiness"
-                type="checkbox"
-                checked={isBusiness}
-                onChange={this.onChange}
-              />
-            </div>
-          </div>
-        ) : (
-          formatPhone(number)
-        )}
-      </>
-    )
-  }
-}
-
-class PhonesList extends React.Component {
-  render() {
-    const { isEditing, phones, updatePhone, addPhone } = this.props
-
-    const wrappedPhones = phones.map((phone, index) => {
-      const { isBusiness } = phone
-
-      let style = 'phone'
-      if (isBusiness) {
-        style += ' phone-business'
-      }
-
-      return (
-        <li key={index} className={style}>
-          <Phone
-            isEditing={isEditing}
-            phone={phone}
-            updatePhone={updatePhone}
-            index={index}
-          />
-        </li>
-      )
-    })
-
-    return (
-      <section className={'phones-container'}>
-        <span className={'phones-header'}>Phones:</span>
-        <ul className={'phones'}>
-          {wrappedPhones}
-          {isEditing && (
-            <li>
-              <button onClick={addPhone}>addPhone</button>
-            </li>
-          )}
-        </ul>
-      </section>
-    )
-  }
-}
 
 class Contact extends React.Component {
   constructor(props) {
@@ -175,7 +78,8 @@ class Contact extends React.Component {
     this.setState(state => {
       const contact = state.editedContact
       const blankPhone = {
-        number: ''
+        number: '',
+        isBusiness: false
       }
       return {
         editedContact: {

@@ -1,0 +1,8 @@
+.phones-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.phones {
+  margin: 0 0 10px 0;
+}
