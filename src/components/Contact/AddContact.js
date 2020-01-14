@@ -41,9 +41,12 @@ class AddContact extends React.Component {
   saveNewContact = () => {
     const { contact } = this.state
     if (!contact.name) {
-      this.setState({
-        fieldErrors: {
-          name: 'Field cannot be empty.'
+      this.setState(state => {
+        return {
+          fieldErrors: {
+            ...state.fieldErrors,
+            name: 'Field cannot be empty.'
+          }
         }
       })
 
@@ -62,6 +65,24 @@ class AddContact extends React.Component {
 
   onNameChange = event => {
     const newName = event.target.value
+
+    if (!newName) {
+      this.setState(state => {
+        return {
+          fieldErrors: {
+            ...state.fieldErrors,
+            name: 'Field cannot be empty.'
+          }
+        }
+      })
+    } else {
+      this.setState(state => {
+        let newErrors = { ...state.fieldErrors }
+        delete newErrors.name
+
+        return { fieldErrors: newErrors }
+      })
+    }
 
     this.setState(state => {
       return {
