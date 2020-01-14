@@ -1,13 +1,14 @@
 import { connect } from 'react-redux'
 import { ContactList } from '../../components/ContactList'
-import { removeContact } from '../../actions'
+import { removeContact, updateContact } from '../../actions'
 
 const mapStateToProps = state => ({
   contacts: state.contacts
 })
 
 const mapDispatchToProps = dispatch => ({
-  removeContact: id => dispatch(removeContact(id))
+  removeContact: id => dispatch(removeContact(id)),
+  updateContact: contact => dispatch(updateContact(contact))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactList)

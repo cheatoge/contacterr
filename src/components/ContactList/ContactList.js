@@ -5,12 +5,13 @@ import './ContactList.css'
 
 class ContactList extends React.Component {
   render() {
-    let { removeContact, contacts } = this.props
+    let { removeContact, updateContact, contacts } = this.props
     contacts = contacts.map(contact => {
       return (
         <Contact
           key={contact.id}
           removeContact={removeContact}
+          updateContact={updateContact}
           contact={contact}
         />
       )

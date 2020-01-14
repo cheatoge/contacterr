@@ -4,3 +4,11 @@ export const removeContact = id => {
     id: id
   }
 }
+
+export const updateContact = contact => {
+  return {
+    type: 'UPDATE_CONTACT',
+    id: contact.id,
+    contact: contact
+  }
+}

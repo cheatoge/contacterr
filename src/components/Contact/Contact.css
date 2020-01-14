@@ -17,11 +17,15 @@
 }
 
 .phones {
-  margin: 0;
+  margin: 0 0 10px 0;
 }
 
 .phone-business {
   color: #1c6ae8;
+}
+
+.phone-editing {
+  margin-bottom: 10px;
 }
 
 .contact-actions {
