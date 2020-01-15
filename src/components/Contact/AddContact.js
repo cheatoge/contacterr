@@ -55,7 +55,13 @@ class AddContact extends React.Component {
       return
     }
 
-    this.props.addContact({ ...contact, id: generateID() })
+    this.props.addContact({
+      ...contact,
+      phones: contact.phones.filter(phone => {
+        return phone.number
+      }),
+      id: generateID()
+    })
     this.finishEditing()
   }
 
