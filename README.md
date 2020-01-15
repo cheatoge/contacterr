@@ -1,5 +1,9 @@
 # Contacterr
 
+## Try it out!
+
+App is available at [contacterr-demo.web.app](https://contacterr-demo.web.app/).
+
 ## What is it?
 
 Contacterr is simple project to try out react-redux stack.<br />
