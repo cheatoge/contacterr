@@ -1,5 +1,6 @@
 import React from 'react'
 import { PhonesList } from '../PhonesList'
+import generateID from '../../util/generateID'
 import './AddContact.css'
 import './Contact.css'
 
@@ -40,6 +41,7 @@ class AddContact extends React.Component {
 
   saveNewContact = () => {
     const { contact } = this.state
+
     if (!contact.name) {
       this.setState(state => {
         return {
@@ -53,6 +55,7 @@ class AddContact extends React.Component {
       return
     }
 
+    this.props.addContact({ ...contact, id: generateID() })
     this.finishEditing()
   }
 

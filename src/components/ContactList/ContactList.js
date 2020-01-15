@@ -6,7 +6,7 @@ import './ContactList.css'
 
 class ContactList extends React.Component {
   render() {
-    let { removeContact, updateContact, contacts } = this.props
+    let { addContact, removeContact, updateContact, contacts } = this.props
     contacts = contacts.map(contact => {
       return (
         <Contact
@@ -18,7 +18,7 @@ class ContactList extends React.Component {
       )
     })
 
-    contacts = [<AddContact key={-1} />, ...contacts]
+    contacts = [<AddContact addContact={addContact} key={-1} />, ...contacts]
 
     return <div className={'contact-list'}>{contacts}</div>
   }

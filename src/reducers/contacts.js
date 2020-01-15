@@ -2,6 +2,9 @@ import testContacts from '../testData/contacts'
 
 const contacts = (state = testContacts, action) => {
   switch (action.type) {
+    case 'ADD_CONTACT':
+      return [action.contact, ...state]
+
     case 'REMOVE_CONTACT':
       return state.filter(contact => {
         return contact.id !== action.id
