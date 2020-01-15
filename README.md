@@ -1,4 +1,18 @@
+# Contacterr
+
+## What is it?
+
+Contacterr is simple project to try out react-redux stack.<br />
+You can do basic operations on contacts, like removing, updating, editing and filter the list using searchbox.<br />
+App does not store any data except test data loaded on start. It is not making any API requests either.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Code Style
+
+Your code should be automatically reformated on commit if you install npm dependencies (`npm install`).<br />
+Formatter used is Prettier and it's configuration can be found in package.json.
+If you are using VSCode, you can install Prettier extension to reformat the code respecting the configured rules.
 
 ## Available Scripts
 
