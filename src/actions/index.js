@@ -20,3 +20,10 @@ export const updateContact = contact => {
     contact: contact
   }
 }
+
+export const setContactsFilter = filter => {
+  return {
+    type: 'SET_CONTACTS_FILTER',
+    filter: filter
+  }
+}

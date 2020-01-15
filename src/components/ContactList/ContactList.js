@@ -1,6 +1,7 @@
 import React from 'react'
 import { Contact } from '../Contact'
 import { AddContact } from '../Contact'
+import { ContactSearch } from '../../containers/ContactSearch'
 import './ContactList.css'
 
 class ContactList extends React.Component {
@@ -19,7 +20,14 @@ class ContactList extends React.Component {
 
     contacts = [<AddContact addContact={addContact} key={-1} />, ...contacts]
 
-    return <div className={'contact-list'}>{contacts}</div>
+    return (
+      <div>
+        <div className="contact-list-toolstrip">
+          <ContactSearch />
+        </div>
+        <div className="contact-list">{contacts}</div>
+      </div>
+    )
   }
 }
 
