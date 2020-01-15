@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { Contact } from '../Contact'
 import { AddContact } from '../Contact'
 import './ContactList.css'
@@ -24,8 +23,4 @@ class ContactList extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  contacts: state.contacts
-})
-
-export default connect(mapStateToProps)(ContactList)
+export default ContactList
