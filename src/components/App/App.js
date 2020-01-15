@@ -12,6 +12,7 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <div className="App">
+          <div className="app-header">CONTACTERR</div>
           <ContactListContainer />
         </div>
       </Provider>
